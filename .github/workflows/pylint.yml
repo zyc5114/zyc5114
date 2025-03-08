@@ -1,0 +1,23 @@
+姓名:pylint
+
+在……之上:[推]
+
+工作:
+建立:
+run-on:ubuntu-最新
+策略:
+矩阵:
+Python版:["3.8", "3.9", "3.10"]
+步骤:
+-uses:操作/结帐@v4
+-姓名:设置Python${{matrix.python版本}}
+uses:操作/setup-python@v3
+和……一起:
+Python版:${{matrix.python版本}}
+-姓名:安装相依性
+跑:|
+Python-m pip安装--upgrade pip
+PIP安装塔架
+-姓名:用pylint分析代码
+跑:|
+pylint$(git ls-files'*.py')
